@@ -98,7 +98,7 @@ export default function IndexPage() {
               </ul>
             </div>
             <div>
-              <p className="text-blue-300 underline">life-coach</p>
+              <p className="text-blue-300">life-coach</p>
               <div className="flex gap-1.5 items-end">
                 <p className="text-sm">health app</p>
                 <p className="text-xs text-muted-foreground">private alpha</p>
