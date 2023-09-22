@@ -122,13 +122,14 @@ export default function IndexPage() {
               </ul>
             </div>
             <div>
-              <Link href="https://instagram.com/glyptodon" className="text-blue-300 underline">glyptodon</Link>
+              <Link href="https://instagram.com/glyptodon" className="text-blue-300">glyptodon</Link>
               <div className="flex gap-1.5 items-end">
                 <p className="text-sm">alt rock band</p>
                 <p className="text-xs text-muted-foreground">2022</p>
               </div>
               <ul className="text-muted-foreground text-xs">
                 <li>• rhythm guitarist and lead singer</li>
+                <li>• played twice a week for like 3 years</li>
                 <li>• we don&apos;t play much anymore as I focus on software development</li>
               </ul>
             </div>
