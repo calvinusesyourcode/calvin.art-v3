@@ -66,7 +66,7 @@ export default function IndexPage() {
   return ( 
     <>
     <div className="relative">
-      <div className="absolute z-10 w-full h-full">
+      <div className="absolute z-10 w-full h-full mix-blend-screen">
         <BeautifulWaveCanvas />
       </div>
       <div className="absolute z-30 w-full h-full">
@@ -75,9 +75,9 @@ export default function IndexPage() {
           <p className="font-bold">calvin ducharme, 21</p>
           <Link href="mailto:c@calvin.art" className="fade-in text-muted-foreground">c@calvin.art</Link>
         </div>
-        <p className="text-muted-foreground">funding my startup (life-coach) by building webapps for local businesses</p>
-        <div className="opacity-80 mt-2">
-          <Card>
+        <p className="text-muted-foreground">building webapps for local businesses, learning about ai + information tech</p>
+        <div className="mt-2">
+        <Card className="bg-[color:var(--card)]">
           <CardContent className="mt-4">
             <div>
               <Link href="https://peden.net" className="text-blue-300 underline">Peden Excavation</Link>

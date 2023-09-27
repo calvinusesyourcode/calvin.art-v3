@@ -11,6 +11,7 @@ export function BeautifulWaveCanvas() {
     const height = canvas.height = window.innerHeight;
 
     context.lineWidth = 0.1;
+    context.strokeStyle = "#000F5F";
 
     let a = Math.random() * 4 - 2;
     let b = Math.random() * 4 - 2;
