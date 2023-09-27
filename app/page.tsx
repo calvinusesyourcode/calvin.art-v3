@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 import { Card, CardContent } from "@/components/ui/card";
 import { Icons } from "@/components/icons";
 import { BeautifulWaveCanvas } from "@/components/canvases";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function IndexPage() {
   const [intervalId, setIntervalId] = useState<NodeJS.Timer | null>(null);
@@ -80,7 +81,7 @@ export default function IndexPage() {
         </div>
         <div className="mt-2">
         <Card className="bg-[hsl(var(--card))]/70">
-          <CardContent className="pt-4">
+          <ScrollArea className="p-4 h-[500px]">
             <div>
               <Link href="https://peden.net" className="text-blue-300 underline">Peden Excavation</Link>
               <div className="flex gap-1.5 items-end">
@@ -141,7 +142,7 @@ export default function IndexPage() {
                 <li>• we don&apos;t play much anymore as I focus on software development</li>
               </ul>
             </div>
-          </CardContent>
+          </ScrollArea>
           </Card>
         </div>
         <div className="mt-2 flex justify-end">
