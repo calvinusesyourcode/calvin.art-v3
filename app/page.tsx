@@ -5,6 +5,7 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import { Card, CardContent } from "@/components/ui/card";
 import { Icons } from "@/components/icons";
+import { BeautifulWaveCanvas } from "@/components/canvases";
 
 export default function IndexPage() {
   const [intervalId, setIntervalId] = useState<NodeJS.Timer | null>(null);
@@ -62,15 +63,20 @@ export default function IndexPage() {
   //   }}
   // }, [])
 
-  return (
+  return ( 
     <>
-      <div id="main-div" className="m-4">
+    <div className="relative">
+      <div className="absolute z-10 w-full h-full">
+        <BeautifulWaveCanvas />
+      </div>
+      <div className="absolute z-30 w-full h-full">
+        <div id="main-div" className="m-4">
         <div className="flex gap-1.5">
           <p className="font-bold">calvin ducharme, 21</p>
           <Link href="mailto:c@calvin.art" className="fade-in text-muted-foreground">c@calvin.art</Link>
         </div>
         <p className="text-muted-foreground">funding my startup (life-coach) by building webapps for local businesses</p>
-        <div className={" mt-2"}>
+        <div className="opacity-80 mt-2">
           <Card>
           <CardContent className="mt-4">
             <div>
@@ -140,5 +146,8 @@ export default function IndexPage() {
           <Link href="https://twitter.com/calvinducharme"><Icons.twitter/></Link>
         </div>
       </div>
+      </div>
+    </div>
+      
     </>
   )}
