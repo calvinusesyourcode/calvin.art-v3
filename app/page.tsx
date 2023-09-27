@@ -65,17 +65,19 @@ export default function IndexPage() {
 
   return ( 
     <>
-    <div className="relative">
+    <div className="relative w-full h-full">
       <div className="absolute z-10 w-full h-full mix-blend-screen">
         <BeautifulWaveCanvas />
       </div>
       <div className="absolute z-30 w-full h-full">
         <div id="main-div" className="m-4">
-        <div className="flex gap-1.5">
+        <div className="bg-black/0 mix-blend-color-dodge">
+        <div className="flex gap-1.5 ">
           <p className="font-bold">calvin ducharme, 21</p>
           <Link href="mailto:c@calvin.art" className="fade-in text-muted-foreground">c@calvin.art</Link>
         </div>
         <p className="text-muted-foreground">building webapps for local businesses, learning about ai + information tech</p>
+        </div>
         <div className="mt-2">
         <Card className="bg-[hsl(var(--card))]/70">
           <CardContent className="mt-4">

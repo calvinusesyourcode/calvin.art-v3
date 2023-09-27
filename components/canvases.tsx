@@ -1,8 +1,10 @@
 'use client'
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 export function BeautifulWaveCanvas() {
+    // const [renderStrokes, setRenderStrokes] = useState(true);
+    const renderStrokes = useRef(true)
   useEffect(() => {
     const canvas = document.getElementById("canvas") as HTMLCanvasElement;
     const context = canvas.getContext("2d");
@@ -10,8 +12,9 @@ export function BeautifulWaveCanvas() {
     const width = canvas.width = window.innerWidth;
     const height = canvas.height = window.innerHeight;
 
+    context.globalAlpha = 1
     context.lineWidth = 0.1;
-    context.strokeStyle = "#000F5F";
+    context.strokeStyle = "#0AE7FF";
 
     let a = Math.random() * 4 - 2;
     let b = Math.random() * 4 - 2;
@@ -29,33 +32,44 @@ export function BeautifulWaveCanvas() {
     }
 
     const render = () => {
-      for (let i = 0; i < points.length; i++) {
-        const p = points[i];
-        const value = getValue(p.x, p.y, a, b, c, d, width, height);
-        p.vx += Math.cos(value) * 0.3;
-        p.vy += Math.sin(value) * 0.3;
+      if (renderStrokes.current) {
+        for (let i = 0; i < points.length; i++) {
+          const p = points[i];
+          const value = getValue(p.x, p.y, a, b, c, d, width, height);
+          p.vx += Math.cos(value) * 0.3;
+          p.vy += Math.sin(value) * 0.3;
 
-        context.beginPath();
-        context.moveTo(p.x, p.y);
+          context.beginPath();
+          context.moveTo(p.x, p.y);
 
-        p.x += p.vx;
-        p.y += p.vy;
-        context.lineTo(p.x, p.y);
-        context.stroke();
+          p.x += p.vx;
+          p.y += p.vy;
+          context.lineTo(p.x, p.y);
+          context.stroke();
 
-        p.vx *= 0.99;
-        p.vy *= 0.99;
+          p.vx *= 0.99;
+          p.vy *= 0.99;
 
-        if (p.x > width) p.x = 0;
-        if (p.y > height) p.y = 0;
-        if (p.x < 0) p.x = width;
-        if (p.y < 0) p.y = height;
+          if (p.x > width) p.x = 0;
+          if (p.y > height) p.y = 0;
+          if (p.x < 0) p.x = width;
+          if (p.y < 0) p.y = height;
+        }
+
+        requestAnimationFrame(render);
       }
-
-      requestAnimationFrame(render);
     };
 
     render();
+
+    const opacityFade = () => {
+      context.globalAlpha -= 0.05
+      if (context.globalAlpha > 0) {
+        setTimeout(() => {opacityFade()}, 100)
+      }
+    }
+
+    setTimeout(() => {opacityFade()}, 2000)
 
   }}, []);
 
