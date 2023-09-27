@@ -77,7 +77,7 @@ export default function IndexPage() {
         </div>
         <p className="text-muted-foreground">building webapps for local businesses, learning about ai + information tech</p>
         <div className="mt-2">
-        <Card className="bg-[color:var(--card)]">
+        <Card className="bg-[hsl(var(--card))]/70">
           <CardContent className="mt-4">
             <div>
               <Link href="https://peden.net" className="text-blue-300 underline">Peden Excavation</Link>
