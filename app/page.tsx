@@ -80,7 +80,7 @@ export default function IndexPage() {
         </div>
         <div className="mt-2">
         <Card className="bg-[hsl(var(--card))]/70">
-          <CardContent className="mt-4">
+          <CardContent className="pt-4">
             <div>
               <Link href="https://peden.net" className="text-blue-300 underline">Peden Excavation</Link>
               <div className="flex gap-1.5 items-end">

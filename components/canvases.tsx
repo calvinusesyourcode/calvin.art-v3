@@ -14,7 +14,11 @@ export function BeautifulWaveCanvas() {
 
     context.globalAlpha = 1
     context.lineWidth = 0.1;
-    context.strokeStyle = "#0AE7FF";
+    const colors = ["#0AE7FF", "#DA4167"]
+    context.strokeStyle = colors[Math.floor(Math.random()*colors.length)]
+    context.imageSmoothingEnabled = true;
+    context.imageSmoothingQuality = 'high';
+
 
     let a = Math.random() * 4 - 2;
     let b = Math.random() * 4 - 2;
@@ -32,7 +36,9 @@ export function BeautifulWaveCanvas() {
     }
 
     const render = () => {
-      if (renderStrokes.current) {
+      if (context.globalAlpha != 0) {
+        // context.fillStyle = "rgba(0, 0, 0, 0.04)"
+        // context.fillRect(0, 0, width, height)
         for (let i = 0; i < points.length; i++) {
           const p = points[i];
           const value = getValue(p.x, p.y, a, b, c, d, width, height);
@@ -63,12 +69,13 @@ export function BeautifulWaveCanvas() {
     render();
 
     const opacityFade = () => {
-      context.globalAlpha -= 0.05
-      if (context.globalAlpha > 0) {
-        setTimeout(() => {opacityFade()}, 100)
+      context.globalAlpha -= 0.1;
+      if (context.globalAlpha > 0.1) {
+        setTimeout(() => {opacityFade()}, 200)
+      } else {
+        context.globalAlpha = 0;
       }
     }
-
     setTimeout(() => {opacityFade()}, 2000)
 
   }}, []);
