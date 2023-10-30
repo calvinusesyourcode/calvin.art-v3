@@ -8,7 +8,7 @@ import { Icons } from "@/components/icons";
 import { BeautifulWaveCanvas, SimpleMatrixCanvas, } from "@/components/canvases";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
-export function IndexPage() {
+function IndexPage() {
   return ( 
     <>
     <div>
