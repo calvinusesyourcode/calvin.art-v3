@@ -5,67 +5,13 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import { Card, CardContent } from "@/components/ui/card";
 import { Icons } from "@/components/icons";
-import { BeautifulWaveCanvas } from "@/components/canvases";
+import { BeautifulWaveCanvas, SimpleMatrixCanvas, } from "@/components/canvases";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
-export default function IndexPage() {
-  const [intervalId, setIntervalId] = useState<NodeJS.Timer | null>(null);
-  
-  // useEffect(() => { //render matrix title
-  //   const canvas = document.getElementById('canvas') as HTMLCanvasElement;
-  //   if (canvas) {
-  //   const context = canvas.getContext('2d');
-  //   if (context) {
-  //   canvas.width = window.innerWidth;
-  //   canvas.height = window.innerWidth/7.5;
-  //   canvas.style.height = canvas.height + 'px';
-  //   // const alphabet = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン0987654321!@#$%^&*()';
-  //   const alphabet = 'w'
-  
-  //   let fontSize = 8;
-  //   const columns = canvas.width/fontSize;
-  
-  //   const rainDrops: number[] = Array.from({ length: columns }, () => 0);
-
-  //   for( let x = 0; x < columns; x++ ) {
-  //       rainDrops[x] = 1;
-  //   }
-  
-  //   const draw = () => {
-  //   //   context.fillStyle = 'rgba(0, 0, 0, 0.04)';
-  //   //   context.fillRect(0, 0, canvas.width, canvas.height);
-  
-  //     context.fillStyle = '#82F';
-  //     context.font = fontSize + 'px monospace';
-  
-  //     for(let i = 0; i < rainDrops.length; i++)
-      
-  //     {
-  //       const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-  //         context.fillText(text, i*fontSize, rainDrops[i]*fontSize, 8);
-  
-  //         if(rainDrops[i]*fontSize > canvas.height){
-  //         // if(rainDrops[i]*fontSize > canvas.height && Math.random() > 0.975){
-  //             // rainDrops[i] = 0;
-  //             if (intervalId) {
-  //               clearInterval(intervalId);
-  //             }
-  //         }
-  //         rainDrops[i]++;
-  //     }
-  //   };
-  
-  //   setIntervalId(() => {
-  //     const intervalId = setInterval(draw, 30);
-  //     return intervalId;
-  //   })
-  //   setTimeout(() => {setTitleRendered(true)}, 300)
-    
-  //   }}
-  // }, [])
-
+export function IndexPage() {
   return ( 
     <>
+    <div>
     <div className="relative w-full h-full">
       <div className="absolute z-10 w-full h-full mix-blend-screen">
         <BeautifulWaveCanvas />
@@ -152,5 +98,19 @@ export default function IndexPage() {
       </div>
     </div>
       
+    </div>
     </>
   )}
+
+export default function SaturnIndexPage() {
+  return (
+    <div className="w-screen h-screen overflow-hidden bg-black">
+      <div className="w-full h-full">
+        <SimpleMatrixCanvas className="w-full h-full z-20" />
+      </div>
+        <Link href="https://saturn.calvin.art" className="absolute flex justify-center w-full bottom-20 items-center z-30">
+          <Icons.saturn className="h-fit w-[50%] fill-black stroke-black "/>
+        </Link>
+    </div>
+  )
+} 
