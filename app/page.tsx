@@ -108,8 +108,9 @@ export default function SaturnIndexPage() {
       <div className="w-full h-full">
         <SimpleMatrixCanvas className="w-full h-full z-20" />
       </div>
-        <Link href="https://saturn.calvin.art" className="absolute flex justify-center w-full bottom-20 items-center z-30">
-          <Icons.saturn className="h-fit w-[50%] fill-black stroke-black "/>
+        <Link href="https://saturn.calvin.art" className="absolute flex justify-center w-full bottom-[50%] items-center z-30">
+          <Icons.saturn className="h-fit w-[50%] translate-x-2 translate-y-2 fill-black stroke-black"/>
+          <Icons.saturn className="h-fit w-[50%] fill-white stroke-white absolute"/>
         </Link>
     </div>
   )
