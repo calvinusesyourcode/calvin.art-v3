@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useEffect, useState, useRef } from 'react';
-import {seed, perlin3, perlin2, simplex2 } from "@/lib/noise_module";
 
 export function BeautifulWaveCanvas() {
     // const [renderStrokes, setRenderStrokes] = useState(true);
@@ -202,99 +201,6 @@ export function BeautifulWaveCanvas2() {
   )
 }
 
-export function Stars() {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current as HTMLCanvasElement;
-    if (canvas) {
-    const context = canvas.getContext('2d');
-    if (context) {
-    let width = canvas.width = window.innerWidth;
-    let height = canvas.height = window.innerHeight;
-
-    context.beginPath();
-    // Draw a large rectangle to cover the entire canvas
-    context.rect(0, 0, width, height);
-    
-    // Draw the circle you want to exclude
-    context.moveTo(width / 2 + 200, height / 2);
-    context.arc(width / 2, height / 2, 200, 0, 2 * Math.PI, true);  // Notice the 'true' for counter-clockwise
-    
-    context.clip();
-    context.strokeStyle = "white";
-
-    seed(Math.random());
-    context.lineWidth = 1;
-    // var calc = (Math.sqrt(Math.pow(x-canvas.width/2,2) + Math.pow(y-canvas.height/2, 2))) < 200
-
-    // create points. each aligned to left edge of screen,
-    // spread out top to bottom.
-    var points: { x: number; y: number; vx: number; vy: number}[] = [];
-    for(var y = 0; y < height; y += 1) {
-      points.push({
-        x: Math.floor(Math.random() * width),
-        y: y, 
-        vx: 0,
-        vy: 0
-      })
-    };
-
-    seed(Math.random());
-
-    const render = () => {
-      context.clearRect(0, 0, width, height);
-      for(var i = 0; i < points.length; i++) {
-        // get each point and do what we did before with a single point
-        var p = points[i];
-        var value = getValue(p.x, p.y);
-        p.vx += Math.cos(value) * 0.1;
-        p.vy += Math.sin(value) * 0.1;
-
-        // move to current position
-        context.beginPath();
-        context.moveTo(p.x, p.y);
-        // add velocity to position and line to new position
-        p.x += p.vx;
-        p.y += p.vy;
-        context.lineTo(p.x, p.y);
-        context.stroke();
-
-        // apply some friction so point doesn't speed up too much
-        p.vx *= 0.99;
-        p.vy *= 0.98;
-
-        // wrap around edges of screen
-        if(p.x > width && Math.random() > 0.99) p.x = 0;
-        // if(p.x > width) p.x = 0;
-        // if(p.y > height) p.y = 0;
-        // if(p.x < 0) p.x = width;
-        // if(p.y < 0) p.y = height;
-      }
-
-      requestAnimationFrame(render);
-    }
-
-    const getValue = (x: number, y: number) => {
-      var xscale = 0.004;
-      var yscale = 0.00001;
-      var value = simplex2(x * xscale, y * yscale)
-      return perlin2(value * x, value * y) * Math.PI * 2;
-    }
-
-    render();
-
-    // Optionally, clean up resources when component unmounts
-    return () => {
-      // Your cleanup code here
-    };
-
-  }}}, []); // Empty dependency array means this useEffect runs once when the component mounts
-
-  return (
-    <canvas ref={canvasRef}></canvas>
-  );
-}
 
 export function Saturn() {
   
