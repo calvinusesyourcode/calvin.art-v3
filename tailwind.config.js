@@ -13,6 +13,9 @@ module.exports = {
       },
     },
     extend: {
+      fontSize: {
+        serif: ["Zodiak-Variable"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
