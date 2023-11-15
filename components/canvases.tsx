@@ -284,7 +284,7 @@ export function SimpleMatrixCanvas(props: { rgbacolor?: string, [x: string]: any
     const color = rgbacolor ? rgbacolor : 'rgba(0, 255, 0, 0.5)'
     console.log(rgbacolor, color)
 
-    const fontSize = 2
+    const fontSize = 6
     context.font = `${fontSize}px monospace`;
 
     const points: number[] = []
