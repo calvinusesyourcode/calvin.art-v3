@@ -109,7 +109,7 @@ export default function SaturnIndexPage() {
         <SimpleMatrixCanvas className="w-full h-full z-20" rgbacolor='rgba(255, 255, 255, 0.5)' />
       </div>
       <div className="absolute bg-gradient-to-br from-orange-900 to-blue-900 opacity-90 mix-blend-overlay w-full h-full top-0 left-0 z-30"/>
-      <div className="absolute flex justify-center w-full h-full top-0 left-0 items-center z-40 backdrop-blur-sm">
+      <div className="absolute flex justify-center w-full h-full top-0 left-0 items-center z-40 backdrop-blur-sm md:backdrop-blur-md">
         <div className=" rounded  p-8 font-sans text-white items-center flex flex-col">
           <span>I am the human they call &quot;calvin.&quot;</span>
           <span className="text-muted-foreground font-light">I use software to solve problems. I also do other things. </span>
