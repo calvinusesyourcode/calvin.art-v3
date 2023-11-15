@@ -106,12 +106,31 @@ export default function SaturnIndexPage() {
   return (
     <div className="w-screen h-screen overflow-hidden bg-black">
       <div className="w-full h-full">
-        <SimpleMatrixCanvas className="w-full h-full z-20" />
+        <SimpleMatrixCanvas className="w-full h-full z-20" rgbacolor='rgba(255, 255, 255, 0.5)' />
       </div>
-        <Link href="https://saturn.calvin.art" className="absolute flex justify-center w-full bottom-[50%] items-center z-30">
-          <Icons.saturn className="h-fit w-[50%] translate-x-2 translate-y-2 fill-black stroke-black"/>
-          <Icons.saturn className="h-fit w-[50%] fill-white stroke-white absolute"/>
-        </Link>
+      <div className="absolute bg-gradient-to-br from-orange-900 to-blue-900 opacity-90 mix-blend-overlay w-full h-full top-0 left-0 z-30"/>
+      <div className="absolute flex justify-center w-full h-full top-0 left-0 items-center z-40 backdrop-blur-[4px]">
+        <div className=" rounded backdrop-blur-[4px] p-8 font-sans text-white items-center flex flex-col">
+          <span>I am the human they call &quot;calvin.&quot;</span>
+          <span className="text-muted-foreground font-light">I use software to solve problems. I also do other things. </span>
+          <div className="flex gap-4 justify-center items-center">
+
+          <Link href="https://saturn.calvin.art" className="">
+            <Icons.saturn className="h-[50px] w-[50px] fill-white stroke-white"/>
+          </Link>
+          <Link href="https://hyperfollow.com/calvinducharme" className="">
+            <Icons.music className="h-[40px] w-[40px] stroke-white"/>
+          </Link>
+          <Link href="https://podcasters.spotify.com/pod/show/calvin-ducharme" className="">
+            <Icons.mic className="h-[50px] w-[50px] fill-white stroke-white"/>
+          </Link>
+          <Link href="https://x.com/calvinducharme">
+            <Icons.twitter className="h-[30px] w-[30px] fill-white stroke-white"/>
+          </Link>
+          </div>
+
+        </div>
+      </div>
     </div>
   )
 } 

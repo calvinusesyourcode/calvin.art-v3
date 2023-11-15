@@ -15,6 +15,7 @@ module.exports = {
     extend: {
       fontSize: {
         serif: ["Zodiak-Variable"],
+        sans: ["Satoshi-Variable"],
       },
       colors: {
         border: "hsl(var(--border))",

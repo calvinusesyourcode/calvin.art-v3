@@ -271,7 +271,8 @@ return (
 )
 }
 
-export function SimpleMatrixCanvas(props: any, { color = 'rgba(0, 255, 0, 0.5)' }) {
+export function SimpleMatrixCanvas(props: { rgbacolor?: string, [x: string]: any }) {
+  const { rgbacolor, ...restProps } = props;
   const matrixCanvasRef = useRef<HTMLCanvasElement | null>(null)
   const alphabet = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン0987654321!@#$%^&*()'
   useEffect(() => {
@@ -280,6 +281,8 @@ export function SimpleMatrixCanvas(props: any, { color = 'rgba(0, 255, 0, 0.5)' 
     if (canvas && context) {
     const width = canvas.width
     const height = canvas.height
+    const color = rgbacolor ? rgbacolor : 'rgba(0, 255, 0, 0.5)'
+    console.log(rgbacolor, color)
 
     const fontSize = 2
     context.font = `${fontSize}px monospace`;
@@ -306,5 +309,5 @@ export function SimpleMatrixCanvas(props: any, { color = 'rgba(0, 255, 0, 0.5)' 
 
   }, [])
 
-  return (<canvas ref={matrixCanvasRef} {...props}></canvas>)
+  return (<canvas ref={matrixCanvasRef} {...restProps}></canvas>)
 }
