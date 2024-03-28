@@ -5,20 +5,36 @@
 @font-face {
   font-family: 'Zodiak-Variable';
   src: url('/fonts/Zodiak-Variable.woff2') format('woff2'),
-       url('/fonts/Zodiak-Variable.woff') format('woff'),
-       url('/fonts/Zodiak-Variable.ttf') format('truetype');
-       font-weight: 100 900;
-       font-display: swap;
-       font-style: normal;
+    url('/fonts/Zodiak-Variable.woff') format('woff'),
+    url('/fonts/Zodiak-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
 }
 @font-face {
   font-family: 'Satoshi-Variable';
   src: url('/fonts/Satoshi-Variable.woff2') format('woff2'),
-       url('/fonts/Satoshi-Variable.woff') format('woff'),
-       url('/fonts/Satoshi-Variable.ttf') format('truetype');
-       font-weight: 300 900;
-       font-display: swap;
-       font-style: normal;
+    url('/fonts/Satoshi-Variable.woff') format('woff'),
+    url('/fonts/Satoshi-Variable.ttf') format('truetype');
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'redaction';
+  src: url('../public/fonts/Redaction35-Bold.otf') format('opentype');
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'minecraftia';
+  src: url(../public/fonts/Minecraftia-Regular.ttf) format('truetype');
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
 }
 
 @layer base {

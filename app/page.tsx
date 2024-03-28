@@ -104,32 +104,46 @@ function IndexPage() {
 
 export default function SaturnIndexPage() {
   return (
-    <div className="w-screen h-screen overflow-hidden bg-black">
-      <div className="w-full h-full">
-        <SimpleMatrixCanvas className="w-full h-full z-20" rgbacolor='rgba(255, 255, 255, 0.5)' />
+    <div className="w-screen h-screen overflow-hidden bg-black grid grid-cols-2 grid-rows-2 font-minecraft ">
+      <div
+        id="top-left"
+        className="col-start-1 col-span-1 row-start-1 row-span-1 flex items-end justify-end"
+        style={{
+          backgroundImage: "url('/deepwork.jpg')",
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+      }}>
+        <Link href="https://saturn.calvin.art" className=" text-[4vw] font-bold m-[2vw] mix-blend-difference">work</Link>
       </div>
-      <div className="absolute bg-gradient-to-br from-orange-900 to-blue-900 opacity-90 mix-blend-overlay w-full h-full top-0 left-0 z-30"/>
-      <div className="absolute flex justify-center w-full h-full top-0 left-0 items-center z-40 backdrop-blur-sm md:backdrop-blur-md">
-        <div className=" rounded  p-8 font-sans text-white items-center flex flex-col">
-          <span>I am the human they call &quot;calvin.&quot;</span>
-          <span className="text-muted-foreground font-light">I use software to solve problems. I also do other things. </span>
-          <div className="flex gap-4 justify-center items-center">
-
-          <Link href="https://saturn.calvin.art" className="">
-            <Icons.saturn className="h-[50px] w-[50px] fill-white stroke-white"/>
-          </Link>
-          <Link href="https://hyperfollow.com/calvinducharme" className="">
-            <Icons.music className="h-[40px] w-[40px] stroke-white"/>
-          </Link>
-          <Link href="https://podcasters.spotify.com/pod/show/calvin-ducharme" className="">
-            <Icons.mic className="h-[50px] w-[50px] fill-white stroke-white"/>
-          </Link>
-          <Link href="https://x.com/calvinducharme">
-            <Icons.twitter className="h-[30px] w-[30px] fill-white stroke-white"/>
-          </Link>
-          </div>
-
-        </div>
+      <div
+        id="top-right"
+        className="col-start-2 col-span-1 row-start-1 row-span-1 flex items-end justify-start"
+        style={{
+          backgroundImage: "url('/tub.jpg')",
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+      }}>
+        <Link href="https://x.com/calvinducharme" className=" text-[4vw] font-bold m-[2vw] mix-blend-difference">ideas</Link>
+      </div>
+      <div
+        id="bottom-left"
+        className=" col-start-1 col-span-1 row-start-2 row-span-1 flex items-start justify-end"
+        style={{
+          backgroundImage: "url('/glyptodon-in-my-backyard.png')",
+          backgroundPosition: 'top',
+          backgroundSize: 'cover',
+      }}>
+        <Link href="https://hyperfollow.com/calvinducharme" className=" text-[4vw] font-bold m-[2vw] mt-[4vw] mix-blend-difference">music</Link>
+      </div>
+      <div
+        id="bottom-right"
+        className="col-start-2 col-span-1 row-start-2 row-span-1 flex items-start justify-start"
+        style={{
+          backgroundImage: "url('/superskate.jpg')",
+          backgroundPosition: 'top',
+          backgroundSize: 'cover',
+      }}>
+        <Link href="https://podcasters.spotify.com/pod/show/calvin-ducharme" className=" text-[4vw] font-bold m-[2vw] mt-[4vw] mix-blend-difference">other</Link>
       </div>
     </div>
   )

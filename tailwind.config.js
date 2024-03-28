@@ -59,6 +59,8 @@ module.exports = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
+        redaction: ["redaction"],
+        minecraft: ["minecraftia"],
       },
       keyframes: {
         "accordion-down": {
